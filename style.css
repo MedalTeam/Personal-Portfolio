@@ -1,0 +1,217 @@
+/* أساسي لجميع العناصر */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark gray */
+    color: #f2f2f2;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* تنسيق شريط التنقل */
+nav {
+    background-color: rgba(0, 191, 255, 0.2); /* Sky blue with transparency */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 191, 255, 0.6); /* Semi-transparent border */
+    backdrop-filter: blur(10px); /* Blur effect for a frosted glass look */
+}
+
+/* تنسيق التبويبات */
+.tabs {
+    display: flex;
+    justify-content: flex-start; /* Align tabs to the left */
+    margin: 0;
+}
+
+.tab-item {
+    list-style: none;
+    margin: 0 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+}
+
+.tab-item.active {
+    border-bottom: 3px solid rgba(242, 242, 242, 0.7);
+}
+
+.tab-item:hover {
+    border-bottom: 3px solid rgba(242, 242, 242, 0.7);
+    transform: translateY(-3px); /* Float effect on hover */
+}
+
+/* تنسيق الحاوية الأساسية */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.content-wrapper .left {
+    width: 30%;
+}
+
+.content-wrapper .right {
+    width: 65%;
+}
+
+/* تنسيق الأقسام */
+section {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgba(18, 18, 18, 0.8); /* Dark background with transparency */
+    border: 1px solid rgba(0, 191, 255, 0.6); /* Semi-transparent border */
+    border-radius: 10px;
+    box-shadow: 0px 2px 15px rgba(0, 191, 255, 0.2); /* Soft blue shadow */
+    background-image: linear-gradient(145deg, rgba(0, 191, 255, 0.1), rgba(0, 0, 0, 0) 70%);
+    transition: opacity 0.5s ease, transform 0.5s ease, border 0.5s ease;
+}
+
+h2 {
+    color: rgba(0, 191, 255, 0.8); /* Semi-transparent sky blue */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 10px 0;
+    position: relative;
+}
+
+ul li:before {
+    content: "•";
+    color: rgba(0, 191, 255, 0.8); /* Semi-transparent sky blue */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+a {
+    color: rgba(0, 191, 255, 0.8); /* Semi-transparent sky blue */
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color: #f2f2f2;
+    text-shadow: 0px 0px 8px rgba(0, 191, 255, 0.7); /* Glow effect on hover */
+}
+
+footer {
+    background-color: rgba(0, 191, 255, 0.2); /* Sky blue with transparency */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 191, 255, 0.6); /* Semi-transparent border */
+    backdrop-filter: blur(10px); /* Blur effect */
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 191, 255, 0.4); /* Transparent sky blue */
+    border-radius: 10px;
+    border: 2px solid rgba(18, 18, 18, 0.8); /* Dark border to create floating effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 191, 255, 0.6); /* Slightly more opaque on hover */
+}
+
+/* Adding smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation for section on scroll */
+section.active {
+    opacity: 1;
+    transform: translateY(0);
+    border-color: rgba(0, 191, 255, 0.8); /* Make border more prominent when active */
+}
+
+/* Adding subtle animations to elements */
+h2, ul li, p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.active h2, section.active ul li, section.active p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+ul li {
+    margin: 10px 0;
+    position: relative;
+    animation: fadeIn 1s ease both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glowing effects for interactive elements */
+a, .tab-item:hover, .tab-item.active {
+    box-shadow:     0 0 8px rgba(0, 191, 255, 0.7); /* Glowing effect */
+}
+
+/* Additional styling for smooth scrolling and transitions */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhancing button appearance */
+button {
+    background-color: rgba(0, 191, 255, 0.3); /* Transparent sky blue */
+    color: #f2f2f2;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: rgba(0, 191, 255, 0.5); /* Slightly more opaque on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
