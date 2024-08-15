@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul class="tabs">
+            <li class="tab-item active" data-tab="about">Developer Portfolio</li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="left">
+            <section id="about" class="active">
+                <h2>About Me</h2>
+                <p>I am a passionate programmer with expertise in web development. I love creating dynamic and
+                    responsive websites.</p>
+                <h3>Skills</h3>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                </ul>
+            </section>
+        </div>
+        <div class="right">
+            <section id="projects" class="active">
+                <h2>Projects</h2>
+                <p>Some Of My Projects</p>
+                <ul>
+                    <li><a href="admin.php">Admin Dashboard</a></li>
+                    <li><a href="index.php">Anime Website</a></li>
+                    <li><a href="rtc.html">Real Time Chat</a></li>
+                </ul>
+            </section>
+
+            <section id="contact" class="active">
+                <h2>Contact Info</h2>
+                <p>If you want to get in touch, you can reach me at :</p>
+                <ul>
+                    <li>Email: buisnesszinou@gmail.com.com</li>
+                    <li>LinkedIn: <a href="linkedin.com/in/buisnesszinou">LinkedIn</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Developer Portfolio</p>
+    </footer>
+
+    <script>
+        // Tab navigation functionality
+        document.querySelectorAll('.tab-item').forEach(item => {
+            item.addEventListener('click', function () {
+                document.querySelectorAll('.tab-item').forEach(tab => tab.classList.remove('active'));
+                document.querySelectorAll('section').forEach(section => section.classList.add('hidden'));
+                this.classList.add('active');
+                document.getElementById(this.getAttribute('data-tab')).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
